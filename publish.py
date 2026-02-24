@@ -11,10 +11,21 @@ HEADER = """
 <link rel="stylesheet" type="text/css" href="/css/pretty.0ae3265014f89d9850bf.css">
 <link rel="stylesheet" type="text/css" href="/css/pretty-vendor.83ac49e057c3eac4fce3.css">
 <link rel="stylesheet" type="text/css" href="/css/misc.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
 
-<script type="text/javascript" id="MathJax-script" async
-  src="/scripts/mathjax.js">
-</script>
+<script type="text/x-mathjax-config">
+ MathJax = {
+   tex: {
+     inlineMath: [['$', '$'], ['\\(', '\\)']]
+   },
+   svg: {
+     fontCache: 'global',
+   }
+ };
+ </script>
+ <script type="text/javascript" id="MathJax-script" async
+   src="/scripts/tex-svg.js">
+ </script>
 
 <style>
 @font-face {
