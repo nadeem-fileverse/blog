@@ -2,7 +2,7 @@
 [date]: <> (2025/12/30)
 [title]: <> (Balance of power)
 
-_Special thanks to Gabriel Alfour, Audrey Tang and Ahmed Gatnash for feedback and review._
+_Special thanks to Gabriel Alfour, Audrey Tang and Ahmed Gatnash for feedback and review._ WASSIP
 
 Many of us are afraid of **Big Business**. We like the products and services that companies provide, but dislike trillion-dollar [monopolistic](https://www.bbc.com/news/technology-56840379) [walled](https://techcrunch.com/2024/12/10/phhhotos-antitrust-claim-against-meta-is-heading-back-to-the-courts/) [gardens](https://techcrunch.com/2023/04/07/twitter-substack-censorship-retweet/), video games that turn into [quasi-gambling,](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0232780) and companies [manipulating entire governments](https://en.wikipedia.org/wiki/1954_Guatemalan_coup_d%27%C3%A9tat#United_Fruit_Company_lobbying) for profit.
 
