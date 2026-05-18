@@ -166,7 +166,7 @@ Mozilla [agrees with me](https://blog.mozilla.org/en/privacy-security/ai-securit
 > 
 > The defects are finite, and we are entering a world where we can finally find them all.
 
-Now, if you Ctrl+F for the words “formal” and “verification” in Mozilla’s post, you will find zero hits for either. The positive future of cybersecurity does not strictly defend on formal verification, or for that matter any other single technology.
+Now, if you Ctrl+F for the words “formal” and “verification” in Mozilla’s post, you will find zero hits for either. The positive future of cybersecurity does not strictly depend on formal verification, or for that matter any other single technology.
 
 What does it depend on? Basically, this chart:
 
@@ -193,9 +193,12 @@ A STARK is a [very complex piece of software](https://vitalik.eth.limo/general/2
 
 Even more ambitious is [evm-asm](https://github.com/Verified-zkEVM/evm-asm): a project building an entire EVM implementation that is formally verified. Here, the security property is not so clean: basically, the goal is to prove equivalence to a different implementation of the EVM written in Lean - though the implementation can be written to maximize intuitiveness and readability without regard for concrete efficiency. It’s possible that we’ll have ten implementations of the EVM, all provably equivalent to each other, all with the same fatal flaw that somehow lets an attacker drain all the ETH from an address they have no permissions for. But that’s _vastly less likely_ than one EVM implementation having that kind of flaw today. And another security property whose importance we came to understand [only after painful experience](https://www.youtube.com/watch?v=hYPCtij_h4o), DoS resistance, _is_ [easy to specify](https://github.com/Verified-zkEVM/evm-asm/pull/1437).
 
-Byzantine fault-tolerant consensus is another such area. Here too, it’s difficult to formally specify what the desired security properties are, but we’ve had human-written proofs [fail to catch bugs before](https://arxiv.org/pdf/2203.01315), and so we have efforts to [formally specify and prove properties about Lean consensus](https://github.com/fradamt/verified-consensus) now.
+Two other important areas are:
 
-A huge part of the value-add is that the proofs are truly end-to-end. Often, the nastiest bugs are _interaction_ bugs, that sit at the edge of two sub-systems that are considered separately. For a human, it’s too difficult to reason about the entire system end-to-end. But an automated rule-checking system can.
+* **Byzantine fault-tolerant consensus**. Here too, it's difficult to formally specify all the desired security properties, but given [how prevalent bugs have been](https://arxiv.org/pdf/2203.01315) it's worth trying - and so we have work-in-progress [implementations and proofs](https://github.com/fradamt/verified-consensus) of Lean consensus in Lean.
+* **Smart contract programming languages**: see [formal verification in Vyper](https://github.com/verifereum/vyper-hol) and [Verity](https://github.com/lfglabs-dev/verity).
+
+A huge part of the value-add in all of these cases is that the proofs are truly end-to-end. Often, the nastiest bugs are _interaction_ bugs, that sit at the edge of two sub-systems that are considered separately. For a human, it’s too difficult to reason about the entire system end-to-end. But an automated rule-checking system can.
 
 ## Formal verification for efficiency
 

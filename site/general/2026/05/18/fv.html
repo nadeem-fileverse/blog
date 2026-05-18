@@ -380,7 +380,7 @@ finally find them all.</p>
 </blockquote>
 <p>Now, if you Ctrl+F for the words "formal" and "verification" in
 Mozilla's post, you will find zero hits for either. The positive future
-of cybersecurity does not strictly defend on formal verification, or for
+of cybersecurity does not strictly depend on formal verification, or for
 that matter any other single technology.</p>
 <p>What does it depend on? Basically, this chart:</p>
 <center>
@@ -447,18 +447,24 @@ href="https://www.youtube.com/watch?v=hYPCtij_h4o">only after painful
 experience</a>, DoS resistance, <em>is</em> <a
 href="https://github.com/Verified-zkEVM/evm-asm/pull/1437">easy to
 specify</a>.</p>
-<p>Byzantine fault-tolerant consensus is another such area. Here too,
-it's difficult to formally specify what the desired security properties
-are, but we've had human-written proofs <a
-href="https://arxiv.org/pdf/2203.01315">fail to catch bugs before</a>,
-and so we have efforts to <a
-href="https://github.com/fradamt/verified-consensus">formally specify
-and prove properties about Lean consensus</a> now.</p>
-<p>A huge part of the value-add is that the proofs are truly end-to-end.
-Often, the nastiest bugs are <em>interaction</em> bugs, that sit at the
-edge of two sub-systems that are considered separately. For a human,
-it's too difficult to reason about the entire system end-to-end. But an
-automated rule-checking system can.</p>
+<p>Two other important areas are:</p>
+<ul>
+<li><strong>Byzantine fault-tolerant consensus</strong>. Here too, it's
+difficult to formally specify all the desired security properties, but
+given <a href="https://arxiv.org/pdf/2203.01315">how prevalent bugs have
+been</a> it's worth trying - and so we have work-in-progress <a
+href="https://github.com/fradamt/verified-consensus">implementations and
+proofs</a> of Lean consensus in Lean.</li>
+<li><strong>Smart contract programming languages</strong>: see <a
+href="https://github.com/verifereum/vyper-hol">formal verification in
+Vyper</a> and <a
+href="https://github.com/lfglabs-dev/verity">Verity</a>.</li>
+</ul>
+<p>A huge part of the value-add in all of these cases is that the proofs
+are truly end-to-end. Often, the nastiest bugs are <em>interaction</em>
+bugs, that sit at the edge of two sub-systems that are considered
+separately. For a human, it's too difficult to reason about the entire
+system end-to-end. But an automated rule-checking system can.</p>
 <h2 id="formal-verification-for-efficiency">Formal verification for
 efficiency</h2>
 <p>Let's look again at <a
