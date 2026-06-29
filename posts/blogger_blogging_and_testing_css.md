@@ -10,7 +10,9 @@ Left Text
 
 <p style="text-align: justify"><span>The ancient forest stood in quiet defiance of the modern world, its towering canopy filtering the afternoon sunlight into a mesmerizing dance of gold and shadow. Deep within this emerald sanctuary, time seemed to slow down. A gentle breeze rustled through the fern-covered forest floor, carrying with it the earthy scent of petrichor and pine. Hidden among the roots of a fallen redwood, a small stream babbled softly as it navigated the mossy stones, carving its way through the wilderness.</span></p>
 
-<span style="color: var(--color-editor-snowpea)">Colored Text</span>
+<span style="color: #9400BD">Colored Text,</span>
+
+<span style="color: #854700">Another Colored Text</span>
 
 ```ts
 const semaphoreGateBlob = buildSemaphoreBlob(linkKey, blob, ownerSet);
