@@ -1,0 +1,554 @@
+
+
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+
+
+<link rel="alternate" type="application/rss+xml" href="../../../../feed.xml" title="Formula in the wild part 2">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/main.css">
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global',
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="../../../../scripts/tex-svg.js">
+</script>
+
+<style>
+</style>
+
+<div id="doc" class="container-fluid markdown-body comment-enabled" data-hard-breaks="true">
+
+<div id="color-mode-switch">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+  </svg>
+  <input type="checkbox" id="switch" />
+  <label for="switch">Dark Mode Toggle</label>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+  </svg>
+</div>
+
+<script type="text/javascript">
+  // Update root html class to set CSS colors
+  const toggleDarkMode = () => {
+    const root = document.querySelector('html');
+    root.classList.toggle('dark');
+  }
+
+  // Update local storage value for colorScheme
+  const toggleColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    if (colorScheme === 'light') localStorage.setItem('colorScheme', 'dark');
+    else localStorage.setItem('colorScheme', 'light');
+  }
+
+  // Set toggle input handler
+  const toggle = document.querySelector('#color-mode-switch input[type="checkbox"]');
+  if (toggle) toggle.onclick = () => {
+    toggleDarkMode();
+    toggleColorScheme();
+  }
+
+  // Check for color scheme on init
+  const checkColorScheme = () => {
+    const colorScheme = localStorage.getItem('colorScheme');
+    if (colorScheme === null || colorScheme === undefined) {
+      // No saved preference — use OS preference
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        toggle.checked = true;
+        toggleDarkMode();
+        localStorage.setItem('colorScheme', 'dark');
+      } else {
+        localStorage.setItem('colorScheme', 'light');
+      }
+    } else if (colorScheme === 'dark') {
+      toggle.checked = true;
+      toggleDarkMode();
+    }
+  }
+  checkColorScheme();
+</script>
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Formula in the wild part 2" />
+<meta name="twitter:image" content="http://vitalik.ca/images/icon.png" />
+
+
+<br>
+<h1 style="margin-bottom:7px"> Formula in the wild part 2 </h1>
+<small style="float:left; color: #888"> 2026 Aug 12 </small>
+<small style="float:right; color: #888"><a href="../../../../index.html">See all posts</a></small>
+<br> <br> <br>
+<title> Formula in the wild part 2 </title>
+
+<p>SECTION A — bare formulas, two or more * or ^ per line</p>
+<p>a*b = b*a</p>
+<p>(a^2 - b^2)</p>
+<p>2^{2^k} &gt; x</p>
+<p>s * x_f * G</p>
+<p>-999 * D * p</p>
+<p>G^{-1}(2^bG)</p>
+<p>x^3 + 2x^2+5</p>
+<p>k * (k-1) * M</p>
+<p>2^d * k_p * k_q</p>
+<p>R_x * R_y * x_k^2</p>
+<p>c^*_0 G^*_0 = C^*</p>
+<p>Q(x^2) + x * R(x^2)</p>
+<p>k_i * k_j * 2^d + 2e</p>
+<p>s * A_1 * G^{-1}(C_2)</p>
+<p>r((A \cdot Z_1) \circ (B \cdot Z_2) + (A \cdot Z_2) \circ (B \cdot
+Z_1) - u_1 * (C \cdot Z_2) - u_2 * (C \cdot Z_1))</p>
+<p>\texttt{11} + \texttt{10} * x_2 + \texttt{10} * x_2x_1 + \texttt{10}
+* x_3 + \texttt{11} * x_2x_3 + \texttt{11} * x_1x_2x_3</p>
+<p>= \texttt{11} + \texttt{10} * x_2 + \texttt{10} * x_2x_1 +
+\texttt{10} * x_3 + \texttt{11} * x_2x_3 + \texttt{11} * x_1x_2x_3</p>
+<p>\begin{matrix}[3, 1, 4, 1] * 6\ + \\ [5, 9, 2, 6] * (-9)\ + \\ [5, 3,
+5, 8] * (-8)\ + \\ [9, 7, 9, 3] * 12 = \\ [41, -15, 74, -76]
+\end{matrix}</p>
+<p>\begin{array}{l}{P_{a}(1)=P_{b}(1)=P_{c}(1)=P_{a^{\prime}}(1)=P_{b^{\prime}}(1)=P_{c^{\prime}}(1)=1}
+\\ {P_{a}\left(\omega^{n}\right) P_{b}\left(\omega^{n}\right)
+P_{c}\left(\omega^{n}\right)=P_{a^{\prime}}\left(\omega^{n}\right)
+P_{b^{\prime}}\left(\omega^{n}\right)
+P_{c^{\prime}}\left(\omega^{n}\right)}\end{array}</p>
+<p>\begin{array}{l}{P_{a}(\omega x)-P_{a}(x)\left(v_{1}+x+v_{2}
+a(x)\right) =Z(x) H_{1}(x)} \\ {P_{a^{\prime}}(\omega
+x)-P_{a^{\prime}}(x)\left(v_{1}+\sigma_{a}(x)+v_{2} a(x)\right)=Z(x)
+H_{2}(x)} \\ {P_{b}(\omega x)-P_{b}(x)\left(v_{1}+g x+v_{2}
+b(x)\right)=Z(x) H_{3}(x)} \\ {P_{b^{\prime}}(\omega
+x)-P_{b^{\prime}}(x)\left(v_{1}+\sigma_{b}(x)+v_{2} b(x)\right)=Z(x)
+H_{4}(x)} \\ {P_{c}(\omega x)-P_{c}(x)\left(v_{1}+g^{2} x+v_{2}
+c(x)\right)=Z(x) H_{5}(x)} \\ {P_{c^{\prime}}(\omega
+x)-P_{c^{\prime}}(x)\left(v_{1}+\sigma_{c}(x)+v_{2} c(x)\right)=Z(x)
+H_{6}(x)}\end{array}</p>
+<p>SECTION B — real prose lines with two or more inline dollar
+formulas</p>
+<p>You can then take the new <span data-type="inlineMath" data-latex="t"
+data-display="no" data-evaluate="no"><span
+class="math inline">\(t\)</span></span> and plug it into the line and
+get back your new point: <span data-type="inlineMath"
+data-latex="(\frac{-5951}{9071}, \frac{-9841}{9071})" data-display="no"
+data-evaluate="no"><span class="math inline">\((\frac{-5951}{9071},
+\frac{-9841}{9071})\)</span></span>.</p>
+<p><span data-type="inlineMath"
+data-latex="x / y \Rightarrow (x * y ^{p-2})" data-display="no"
+data-evaluate="no"><span class="math inline">\(x / y \Rightarrow (x * y
+^{p-2})\)</span></span> % <span data-type="inlineMath" data-latex="p"
+data-display="no" data-evaluate="no"><span
+class="math inline">\(p\)</span></span></p>
+<p><em>A minimal viable attack. <span data-type="inlineMath"
+data-latex="A" data-display="no" data-evaluate="no"><span
+class="math inline">\(A\)</span></span> and <span data-type="inlineMath"
+data-latex="C" data-display="no" data-evaluate="no"><span
+class="math inline">\(C\)</span></span> illegally switch over to support
+<span data-type="inlineMath" data-latex="B" data-display="no"
+data-evaluate="no"><span class="math inline">\(B\)</span></span>'s block
+(and can get penalized for this), giving it a 3-2 advantage, and at this
+point it becomes legal for <span data-type="inlineMath" data-latex="D"
+data-display="no" data-evaluate="no"><span
+class="math inline">\(D\)</span></span> and <span data-type="inlineMath"
+data-latex="E" data-display="no" data-evaluate="no"><span
+class="math inline">\(E\)</span></span> to also switch over.</em></p>
+<p>Mathametically, this can be represented as, a hand is stronger if the
+player can come up with a line <span data-type="inlineMath"
+data-latex="L(x) = mx+b" data-display="no" data-evaluate="no"><span
+class="math inline">\(L(x) = mx+b\)</span></span> such that they have
+cards for the numbers <span data-type="inlineMath" data-latex="L(0)"
+data-display="no" data-evaluate="no"><span
+class="math inline">\(L(0)\)</span></span>, <span data-type="inlineMath"
+data-latex="L(1)" data-display="no" data-evaluate="no"><span
+class="math inline">\(L(1)\)</span></span> ... <span
+data-type="inlineMath" data-latex="L(k)" data-display="no"
+data-evaluate="no"><span class="math inline">\(L(k)\)</span></span> for
+the highest <span data-type="inlineMath" data-latex="k"
+data-display="no" data-evaluate="no"><span
+class="math inline">\(k\)</span></span>.</p>
+<p>* Suppose you have evaluations of a polynomial <span
+data-type="inlineMath" data-latex="A" data-display="no"
+data-evaluate="no"><span class="math inline">\(A\)</span></span>, and
+you want to prove that its degree is <span data-type="inlineMath"
+data-latex="&lt; 2^{20}" data-display="no" data-evaluate="no"><span
+class="math inline">\(&amp;lt; 2^{20}\)</span></span></p>
+<p>Let us get into the deep math of how this works. We have a set of
+users and a set of notes; we can create a matrix <span
+data-type="inlineMath" data-latex="M" data-display="no"
+data-evaluate="no"><span class="math inline">\(M\)</span></span>, where
+the cell <span data-type="inlineMath" data-latex="M_{i,j}"
+data-display="no" data-evaluate="no"><span
+class="math inline">\(M_{i,j}\)</span></span> represents how the i'th
+user rated the j'th note.</p>
+<p>And of course, we have a highly subjective criterion that <span
+data-type="inlineMath" data-latex="f(n)" data-display="no"
+data-evaluate="no"><span class="math inline">\(f(n)\)</span></span> must
+be "reasonable". We can create compromise proposals by trying different
+shapes for <span data-type="inlineMath" data-latex="f" data-display="no"
+data-evaluate="no"><span class="math inline">\(f\)</span></span>:</p>
+<p>If <span data-type="inlineMath" data-latex="P" data-display="no"
+data-evaluate="no"><span class="math inline">\(P\)</span></span>, <span
+data-type="inlineMath" data-latex="Q" data-display="no"
+data-evaluate="no"><span class="math inline">\(Q\)</span></span>, <span
+data-type="inlineMath" data-latex="R" data-display="no"
+data-evaluate="no"><span class="math inline">\(R\)</span></span> and
+<span data-type="inlineMath" data-latex="S" data-display="no"
+data-evaluate="no"><span class="math inline">\(S\)</span></span> were
+simple <em>numbers</em>, then making a simple pairing is easy: we can do
+<span data-type="inlineMath" data-latex="e(x, y) = 2^{xy}"
+data-display="no" data-evaluate="no"><span class="math inline">\(e(x, y)
+= 2^{xy}\)</span></span>. Then, we can see:</p>
+<p>
+You can mentally plug in <span data-type="inlineMath" data-latex="1"
+data-display="no" data-evaluate="no"><span
+class="math inline">\(1\)</span></span>, <span data-type="inlineMath"
+data-latex="2" data-display="no" data-evaluate="no"><span
+class="math inline">\(2\)</span></span>, <span data-type="inlineMath"
+data-latex="3" data-display="no" data-evaluate="no"><span
+class="math inline">\(3\)</span></span> and <span data-type="inlineMath"
+data-latex="4" data-display="no" data-evaluate="no"><span
+class="math inline">\(4\)</span></span> to the above expression and
+verify that it returns <span data-type="inlineMath" data-latex="1"
+data-display="no" data-evaluate="no"><span
+class="math inline">\(1\)</span></span> for <span data-type="inlineMath"
+data-latex="x= 1" data-display="no" data-evaluate="no"><span
+class="math inline">\(x= 1\)</span></span> and <span
+data-type="inlineMath" data-latex="0" data-display="no"
+data-evaluate="no"><span class="math inline">\(0\)</span></span> in the
+other three cases.
+</p>
+<p>What have we done? <strong>We have reduced an unproven claim of the
+form</strong> <span data-type="inlineMath"
+data-latex="V_{32}(p_{32}) = y_{32}" data-display="no"
+data-evaluate="no"><span class="math inline">\(V_{32}(p_{32}) =
+y_{32}\)</span></span> <strong>to an unproven claim of the form</strong>
+<span data-type="inlineMath" data-latex="V_{31}(p_{31}) = y_{31}"
+data-display="no" data-evaluate="no"><span
+class="math inline">\(V_{31}(p_{31}) = y_{31}\)</span></span>, all
+without using any commitments!!!</p>
+<p>* The yellow area (<span data-type="inlineMath" data-latex="L"
+data-display="no" data-evaluate="no"><span
+class="math inline">\(L\)</span></span>) gets multiplied by <span
+data-type="inlineMath" data-latex="\alpha^2" data-display="no"
+data-evaluate="no"><span class="math inline">\(\alpha^2\)</span></span>
+(because every yellow square is scaled up by <span
+data-type="inlineMath" data-latex="\alpha" data-display="no"
+data-evaluate="no"><span class="math inline">\(\alpha\)</span></span> on
+both dimensions)</p>
+<p>For example, if <span data-type="inlineMath"
+data-latex="ct_1 = [1, 2]" data-display="no" data-evaluate="no"><span
+class="math inline">\(ct_1 = [1, 2]\)</span></span> and <span
+data-type="inlineMath" data-latex="ct_2 = [3, 4]" data-display="no"
+data-evaluate="no"><span class="math inline">\(ct_2 = [3,
+4]\)</span></span>, then <span data-type="inlineMath"
+data-latex="ct_1 \otimes ct_2 = [3, 4, 6, 8]" data-display="no"
+data-evaluate="no"><span class="math inline">\(ct_1 \otimes ct_2 = [3,
+4, 6, 8]\)</span></span>, and <span data-type="inlineMath"
+data-latex="enc(&lt;ct_1 \otimes ct_2, k \otimes k&gt;) = enc(3k_1k_1 + 4k_1k_2 + 6k_2k_1 + 8k_2k_2)"
+data-display="no" data-evaluate="no"><span
+class="math inline">\(enc(&amp;lt;ct_1 \otimes ct_2, k \otimes k&gt;) =
+enc(3k_1k_1 + 4k_1k_2 + 6k_2k_1 + 8k_2k_2)\)</span></span> could be
+computed via:</p>
+<p>SECTION C — feature coverage, bare plain text</p>
+<p>\begin{array}{l}{2 x_{1}-x_{2}+3 x_{3}=8} \\ {x_{1}+4 x_{2}-5
+x_{3}=5} \\ {8 x_{1}-x_{2}-x_{3}=-2}\end{array}</p>
+<p>f(n) = \int_0^n p_0 * 1.1^n</p>
+<p>\sum_{i=4}^7 {7 \choose i} * 0.1^i * 0.9^{7-i} = 0.002728</p>
+<p>\sum_{i=6}^8 {8 \choose i} * 0.1^i * 0.9^{8-i} = 0.00002341</p>
+<p>\bmod 7</p>
+<p>6 \cdot 2^{2} + 5 \cdot 2 + 4 = 38, 38 \bmod 31 = 7</p>
+<p>\bar{h} = hash(h, r)</p>
+<p>\{N_{prev}, \bar{h}_{prev}, \bar{u}_{prev}\}</p>
+<p>x \cdot (x-1) \cdot (x-2) \cdot \ldots(x-9)</p>
+<p>Z(x) = (x-1) \cdot (x-2) \cdot \ldots (x-1000000)</p>
+<p>\bf G_1</p>
+<p>\bf (F_p)^{12}</p>
+<p>\ln{x}</p>
+<p>U(B) = q \cdot \ln{N_b}</p>
+<p>\texttt{11}</p>
+<p>i \in [1..n]</p>
+<p>\sum_{i_k \in \{0,1\}} (V_{31}(i_1, i_2 ... i_N)^3 + r_{31}) *
+W_{31}(i_1, i_2 ... i_N)</p>
+<p>() \rightarrow X</p>
+<p>345 \xrightarrow{\times 8} 2760 \rightarrow [2, 7, 6, 0]
+\xrightarrow{\times 3} [6, 21, 18, 0]</p>
+<p>\sqrt{N}</p>
+<p>1 + 1 + \frac{1}{\sqrt{2}} + \frac{1}{2} + \frac{1}{2\sqrt{2}} + ... =
+3 + \sqrt{2} \approx 4.414</p>
+<p>\sum_i c_i G_i</p>
+<p>\sum_{b=0}^{log(q)-1} (s * (B_{\{out,i,b\}} - (tY)_{\{i,b\}} * G) +
+e_{\{out,i,b\}}) * G^{-1}(2^bG)</p>
+<p>\left(Q_{L_{i}}\right) a_{i}+\left(Q_{R_{i}}\right)
+b_{i}+\left(Q_{O_{i}}\right) c_{i}+\left(Q_{M_{i}}\right) a_{i}
+b_{i}+Q_{C_{i}}=0</p>
+<p>\geq</p>
+<p>\frac{1}{2}</p>
+<p>g(X) = r^0\frac{A_0(X) - y_0}{X - x_0} + r^1\frac{A_1(X) - y_1}{X -
+x_1} + ... + r^n\frac{A_n(X) - y_n}{X - x_n}</p>
+<p>\{0, 1\}</p>
+<p>= q_0 * Q_{\{1,b_1\}} * Q_{\{2,b_2\}} * P_2 + e_1 * K_{\{2,b_2\}} +
+q_0 * Q_{\{1,b_1\}} * E_{\{2,b_2\}}</p>
+<p>\beta</p>
+<p>b'_i</p>
+<p>\cdot</p>
+<p>2^D</p>
+<p>A_1</p>
+<p>N</p>
+<p>a(a+1)(a+b) + b(b+1)(a+b) + (a+1)(b+1) - 4(a+1)(b+1)(a+b) = 0</p>
+<p>SECTION D — display math, one equation per line</p>
+<p><span data-type="inlineMath" data-latex="(m_1 * m_2)"
+data-display="yes" data-evaluate="no"><span class="math display">\[(m_1
+* m_2)\]</span></span></p>
+<p><span data-type="inlineMath" data-latex="\frac{P(x)-a}{x-z}"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[\frac{P(x)-a}{x-z}\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="= &lt;c_1, k&gt; * &lt;c_2, k&gt;" data-display="yes"
+data-evaluate="no"><span class="math display">\[= &amp;lt;c_1, k&gt; *
+&amp;lt;c_2, k&gt;\]</span></span></p>
+<p><span data-type="inlineMath" data-latex="y=x^{3}-5 x^{2}+7 x-2"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[y=x^{3}-5 x^{2}+7 x-2\]</span></span></p>
+<p><span data-type="inlineMath" data-latex="enc(m) = R * p + r * 2 + m"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[enc(m) = R * p + r * 2 + m\]</span></span></p>
+<p><span data-type="inlineMath" data-latex="(\sum_{i=1}^n \sqrt{c_i})^2"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[(\sum_{i=1}^n \sqrt{c_i})^2\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="= (2e_1 + m_1) * (2e_2 + m_2)" data-display="yes"
+data-evaluate="no"><span class="math display">\[= (2e_1 + m_1) * (2e_2 +
+m_2)\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="dec(ct) = (ct\ mod\ p)\ mod\ 2" data-display="yes"
+data-evaluate="no"><span class="math display">\[dec(ct) = (ct\ mod\ p)\
+mod\ 2\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="ct_1 = R_1 * p + r_1 * 2 + m_1" data-display="yes"
+data-evaluate="no"><span class="math display">\[ct_1 = R_1 * p + r_1 * 2
++ m_1\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="ct_2 = R_2 * p + r_2 * 2 + m_2" data-display="yes"
+data-evaluate="no"><span class="math display">\[ct_2 = R_2 * p + r_2 * 2
++ m_2\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="&lt;c_1 \otimes c_2, k \otimes k&gt;" data-display="yes"
+data-evaluate="no"><span class="math display">\[&amp;lt;c_1 \otimes c_2,
+k \otimes k&gt;\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="\bigotimes_{i=0}^1 (1 - r_i, r_i)" data-display="yes"
+data-evaluate="no"><span class="math display">\[\bigotimes_{i=0}^1 (1 -
+r_i, r_i)\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="\bigotimes_{i=2}^3 (1 - r_i, r_i)" data-display="yes"
+data-evaluate="no"><span class="math display">\[\bigotimes_{i=2}^3 (1 -
+r_i, r_i)\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="gas = x_1 * data + x_2 * computation" data-display="yes"
+data-evaluate="no"><span class="math display">\[gas = x_1 * data + x_2 *
+computation\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="1, 42, 199, 215, 245, 249, 180, 91..." data-display="yes"
+data-evaluate="no"><span class="math display">\[1, 42, 199, 215, 245,
+249, 180, 91...\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="= 2(e_1m_2 + e_2m_1 + 2e_1e_2) + m_1m_2" data-display="yes"
+data-evaluate="no"><span class="math display">\[= 2(e_1m_2 + e_2m_1 +
+2e_1e_2) + m_1m_2\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="gas = max(x_1 * data, x_2 * computation)" data-display="yes"
+data-evaluate="no"><span class="math display">\[gas = max(x_1 * data,
+x_2 * computation)\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="H(x) = \frac{F(x+2) - F(x+1) - F(x)}{Z(x)}"
+data-display="yes" data-evaluate="no"><span class="math display">\[H(x)
+= \frac{F(x+2) - F(x+1) - F(x)}{Z(x)}\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="y = \frac{(x-2)(x-3)(x-4)}{(1-2)(1-3)(1-4)}"
+data-display="yes" data-evaluate="no"><span class="math display">\[y =
+\frac{(x-2)(x-3)(x-4)}{(1-2)(1-3)(1-4)}\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="Q_{L}=1, Q_{R}=0, Q_{M}=0, Q_{O}=0, Q_{C}=-x"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[Q_{L}=1, Q_{R}=0, Q_{M}=0, Q_{O}=0,
+Q_{C}=-x\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="(r_1 * r_2 * 2 + r_1 * m_2 + r_2 * m_1) * 2 +"
+data-display="yes" data-evaluate="no"><span class="math display">\[(r_1
+* r_2 * 2 + r_1 * m_2 + r_2 * m_1) * 2 +\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="(R_1 + R_2) * p + (r_1 + r_2) * 2 + (m_1 + m_2)"
+data-display="yes" data-evaluate="no"><span class="math display">\[(R_1
++ R_2) * p + (r_1 + r_2) * 2 + (m_1 + m_2)\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="0 * 41 + (-1) * (-15) + 0 * 74 + 2 * (-76) = -137"
+data-display="yes" data-evaluate="no"><span class="math display">\[0 *
+41 + (-1) * (-15) + 0 * 74 + 2 * (-76) = -137\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="(A \cdot Z) \circ (B \cdot Z) - u * (C \cdot Z) = E"
+data-display="yes" data-evaluate="no"><span class="math display">\[(A
+\cdot Z) \circ (B \cdot Z) - u * (C \cdot Z) = E\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="(A \cdot Z) \circ (B \cdot Z) = u * (C \cdot Z) + E"
+data-display="yes" data-evaluate="no"><span class="math display">\[(A
+\cdot Z) \circ (B \cdot Z) = u * (C \cdot Z) + E\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="(R_1 * R_2 * p + r_1 * 2 + m_1 + r_2 * 2 + m_2) * p +"
+data-display="yes" data-evaluate="no"><span class="math display">\[(R_1
+* R_2 * p + r_1 * 2 + m_1 + r_2 * 2 + m_2) * p +\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="(A \cdot Z_1) \circ (B \cdot Z_1) - u_1 * (C \cdot Z_1)"
+data-display="yes" data-evaluate="no"><span class="math display">\[(A
+\cdot Z_1) \circ (B \cdot Z_1) - u_1 * (C \cdot Z_1)\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="enc(k_1 * k_1) + enc(k_1 * k_1 * 2) + enc(k_1 * k_2 * 4) +"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[enc(k_1 * k_1) + enc(k_1 * k_1 * 2) + enc(k_1 *
+k_2 * 4) +\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="r^2((A \cdot Z_2) \circ (B \cdot Z_2) - u_2 * (C \cdot Z_2))"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[r^2((A \cdot Z_2) \circ (B \cdot Z_2) - u_2 * (C
+\cdot Z_2))\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="enc(k_2 * k_1 * 2) + enc(k_2 * k_1 * 4) + enc(k_2 * k_2 * 8)"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[enc(k_2 * k_1 * 2) + enc(k_2 * k_1 * 4) + enc(k_2
+* k_2 * 8)\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="(A \cdot Z_1) \circ (B \cdot Z_1) - u_1 * (C \cdot Z_1) = E_1"
+data-display="yes" data-evaluate="no"><span class="math display">\[(A
+\cdot Z_1) \circ (B \cdot Z_1) - u_1 * (C \cdot Z_1) =
+E_1\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="(A \cdot Z_2) \circ (B \cdot Z_2) - u_2 * (C \cdot Z_2) = E_2"
+data-display="yes" data-evaluate="no"><span class="math display">\[(A
+\cdot Z_2) \circ (B \cdot Z_2) - u_2 * (C \cdot Z_2) =
+E_2\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="ct_1 + ct_2 = R_1 * p + R_2 * p + r_1 * 2 + r_2 * 2 + m_1 + m_2"
+data-display="yes" data-evaluate="no"><span class="math display">\[ct_1
++ ct_2 = R_1 * p + R_2 * p + r_1 * 2 + r_2 * 2 + m_1 +
+m_2\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="Q_{L_{i}}=1, Q_{R_{i}}=1, Q_{M_{i}}=0, Q_{O_{i}}=-1, Q_{C_{i}}=0"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[Q_{L_{i}}=1, Q_{R_{i}}=1, Q_{M_{i}}=0,
+Q_{O_{i}}=-1, Q_{C_{i}}=0\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="Q_{L_{i}}=0, Q_{R_{i}}=0, Q_{M_{i}}=1, Q_{O_{i}}=-1, Q_{C_{i}}=0"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[Q_{L_{i}}=0, Q_{R_{i}}=0, Q_{M_{i}}=1,
+Q_{O_{i}}=-1, Q_{C_{i}}=0\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="L(x) \cdot x_{1}+M(x) \cdot x_{2}+R(x) \cdot x_{3}-O(x)=Z(x) H(x)"
+data-display="yes" data-evaluate="no"><span class="math display">\[L(x)
+\cdot x_{1}+M(x) \cdot x_{2}+R(x) \cdot x_{3}-O(x)=Z(x)
+H(x)\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="ct_1 * ct_2 = (R_1 * p + r_1 * 2 + m_1) * (R_2 * p + r_2 * 2 + m_2)"
+data-display="yes" data-evaluate="no"><span class="math display">\[ct_1
+* ct_2 = (R_1 * p + r_1 * 2 + m_1) * (R_2 * p + r_2 * 2 +
+m_2)\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="[(1 - r_2) * (1 - r_3), r_2 * (1 - r_3), (1 - r_2) * r_3, r_2 * r_3]"
+data-display="yes" data-evaluate="no"><span class="math display">\[[(1 -
+r_2) * (1 - r_3), r_2 * (1 - r_3), (1 - r_2) * r_3, r_2 *
+r_3]\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="[(1 - 1) * (1 - 2), 1 * (1 - 2), (1 - 1) * 2, 1 * 2] \\ = [0, -1, 0, 2]"
+data-display="yes" data-evaluate="no"><span class="math display">\[[(1 -
+1) * (1 - 2), 1 * (1 - 2), (1 - 1) * 2, 1 * 2] \\ = [0, -1, 0,
+2]\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="Q_{L}(x) a(x)+Q_{R}(x) b(x)+Q_{O}(x) c(x)+Q_{M}(x) a(x) b(x)+Q_{C}(x)=0"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[Q_{L}(x) a(x)+Q_{R}(x) b(x)+Q_{O}(x)
+c(x)+Q_{M}(x) a(x) b(x)+Q_{C}(x)=0\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="[(1 - 3) * (1 - 4), 3 * (1 - 4), (1 - 3) * 4, 3 * 4] \\ = [6, -9, -8, 12]"
+data-display="yes" data-evaluate="no"><span class="math display">\[[(1 -
+3) * (1 - 4), 3 * (1 - 4), (1 - 3) * 4, 3 * 4] \\ = [6, -9, -8,
+12]\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="(X + \alpha_1) * (X^2 + \alpha_2)\ *\ ...\ *\ (X^{\frac{n}{2}} + \alpha_{log(n)})"
+data-display="yes" data-evaluate="no"><span class="math display">\[(X +
+\alpha_1) * (X^2 + \alpha_2)\ *\ ...\ *\ (X^{\frac{n}{2}} +
+\alpha_{log(n)})\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="(A \cdot (Z_1 + rZ_2)) \circ (B \cdot (Z_1 + rZ_2)) - (u_1 + ru_2)*(C \cdot (Z_1 + rZ_2))"
+data-display="yes" data-evaluate="no"><span class="math display">\[(A
+\cdot (Z_1 + rZ_2)) \circ (B \cdot (Z_1 + rZ_2)) - (u_1 + ru_2)*(C \cdot
+(Z_1 + rZ_2))\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="345 \xrightarrow{\times 8} 2760 \rightarrow [2, 7, 6, 0] \xrightarrow{\times 3} [6, 21, 18, 0]"
+data-display="yes" data-evaluate="no"><span class="math display">\[345
+\xrightarrow{\times 8} 2760 \rightarrow [2, 7, 6, 0] \xrightarrow{\times
+3} [6, 21, 18, 0]\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="345 \xrightarrow{\times 3} 1035 \rightarrow [1, 0, 3, 5] \xrightarrow{\times 8} [8, 0, 24, 40]"
+data-display="yes" data-evaluate="no"><span class="math display">\[345
+\xrightarrow{\times 3} 1035 \rightarrow [1, 0, 3, 5] \xrightarrow{\times
+8} [8, 0, 24, 40]\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="p_{a}(n) \cdot p_{b}(n) \cdot p_{c}(n)=p_{a}^{\prime}(n) \cdot p_{b}^{\prime}(n) \cdot p_{c}^{\prime}(n)"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[p_{a}(n) \cdot p_{b}(n) \cdot
+p_{c}(n)=p_{a}^{\prime}(n) \cdot p_{b}^{\prime}(n) \cdot
+p_{c}^{\prime}(n)\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="\begin{array}{l}{2 x_{1}-x_{2}+3 x_{3}=8} \\ {x_{1}+4 x_{2}-5 x_{3}=5} \\ {8 x_{1}-x_{2}-x_{3}=-2}\end{array}"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[\begin{array}{l}{2 x_{1}-x_{2}+3 x_{3}=8} \\
+{x_{1}+4 x_{2}-5 x_{3}=5} \\ {8
+x_{1}-x_{2}-x_{3}=-2}\end{array}\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="r((A \cdot Z_1) \circ (B \cdot Z_2) + (A \cdot Z_2) \circ (B \cdot Z_1) - u_1 * (C \cdot Z_2) - u_2 * (C \cdot Z_1))"
+data-display="yes" data-evaluate="no"><span class="math display">\[r((A
+\cdot Z_1) \circ (B \cdot Z_2) + (A \cdot Z_2) \circ (B \cdot Z_1) - u_1
+* (C \cdot Z_2) - u_2 * (C \cdot Z_1))\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="\left(Q_{L_{i}}\right) a_{i}+\left(Q_{R_{i}}\right) b_{i}+\left(Q_{O_{i}}\right) c_{i}+\left(Q_{M_{i}}\right) a_{i} b_{i}+Q_{C_{i}}=0"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[\left(Q_{L_{i}}\right)
+a_{i}+\left(Q_{R_{i}}\right) b_{i}+\left(Q_{O_{i}}\right)
+c_{i}+\left(Q_{M_{i}}\right) a_{i} b_{i}+Q_{C_{i}}=0\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="\begin{matrix}[3, 1, 4, 1] * 6\ + \\ [5, 9, 2, 6] * (-9)\ + \\ [5, 3, 5, 8] * (-8)\ + \\ [9, 7, 9, 3] * 12 = \\ [41, -15, 74, -76] \end{matrix}"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[\begin{matrix}[3, 1, 4, 1] * 6\ + \\ [5, 9, 2, 6]
+* (-9)\ + \\ [5, 3, 5, 8] * (-8)\ + \\ [9, 7, 9, 3] * 12 = \\ [41, -15,
+74, -76] \end{matrix}\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="\begin{array}{l}{P_{a}(1)=P_{b}(1)=P_{c}(1)=P_{a^{\prime}}(1)=P_{b^{\prime}}(1)=P_{c^{\prime}}(1)=1} \\ {P_{a}\left(\omega^{n}\right) P_{b}\left(\omega^{n}\right) P_{c}\left(\omega^{n}\right)=P_{a^{\prime}}\left(\omega^{n}\right) P_{b^{\prime}}\left(\omega^{n}\right) P_{c^{\prime}}\left(\omega^{n}\right)}\end{array}"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[\begin{array}{l}{P_{a}(1)=P_{b}(1)=P_{c}(1)=P_{a^{\prime}}(1)=P_{b^{\prime}}(1)=P_{c^{\prime}}(1)=1}
+\\ {P_{a}\left(\omega^{n}\right) P_{b}\left(\omega^{n}\right)
+P_{c}\left(\omega^{n}\right)=P_{a^{\prime}}\left(\omega^{n}\right)
+P_{b^{\prime}}\left(\omega^{n}\right)
+P_{c^{\prime}}\left(\omega^{n}\right)}\end{array}\]</span></span></p>
+<p><span data-type="inlineMath"
+data-latex="\begin{array}{l}{P_{a}(\omega x)-P_{a}(x)\left(v_{1}+x+v_{2} a(x)\right) =Z(x) H_{1}(x)} \\ {P_{a^{\prime}}(\omega x)-P_{a^{\prime}}(x)\left(v_{1}+\sigma_{a}(x)+v_{2} a(x)\right)=Z(x) H_{2}(x)} \\ {P_{b}(\omega x)-P_{b}(x)\left(v_{1}+g x+v_{2} b(x)\right)=Z(x) H_{3}(x)} \\ {P_{b^{\prime}}(\omega x)-P_{b^{\prime}}(x)\left(v_{1}+\sigma_{b}(x)+v_{2} b(x)\right)=Z(x) H_{4}(x)} \\ {P_{c}(\omega x)-P_{c}(x)\left(v_{1}+g^{2} x+v_{2} c(x)\right)=Z(x) H_{5}(x)} \\ {P_{c^{\prime}}(\omega x)-P_{c^{\prime}}(x)\left(v_{1}+\sigma_{c}(x)+v_{2} c(x)\right)=Z(x) H_{6}(x)}\end{array}"
+data-display="yes" data-evaluate="no"><span
+class="math display">\[\begin{array}{l}{P_{a}(\omega
+x)-P_{a}(x)\left(v_{1}+x+v_{2} a(x)\right) =Z(x) H_{1}(x)} \\
+{P_{a^{\prime}}(\omega
+x)-P_{a^{\prime}}(x)\left(v_{1}+\sigma_{a}(x)+v_{2} a(x)\right)=Z(x)
+H_{2}(x)} \\ {P_{b}(\omega x)-P_{b}(x)\left(v_{1}+g x+v_{2}
+b(x)\right)=Z(x) H_{3}(x)} \\ {P_{b^{\prime}}(\omega
+x)-P_{b^{\prime}}(x)\left(v_{1}+\sigma_{b}(x)+v_{2} b(x)\right)=Z(x)
+H_{4}(x)} \\ {P_{c}(\omega x)-P_{c}(x)\left(v_{1}+g^{2} x+v_{2}
+c(x)\right)=Z(x) H_{5}(x)} \\ {P_{c^{\prime}}(\omega
+x)-P_{c^{\prime}}(x)\left(v_{1}+\sigma_{c}(x)+v_{2} c(x)\right)=Z(x)
+H_{6}(x)}\end{array}\]</span></span></p>
+ </div> 
