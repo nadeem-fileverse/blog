@@ -9,6 +9,10 @@ PRE_HEADER = """
 
 """
 
+# Escaping trap: this template is a Python string AND emits JavaScript, so a
+# MathJax delimiter like \( needs FOUR backslashes here (Python halves them,
+# the JS string literal halves them again). '\\(' emits a bare '(' delimiter,
+# which typesets every prose parenthetical in every post as TeX.
 HEADER_TEMPLATE = """
 
 <link rel="stylesheet" type="text/css" href="$root/css/main.css">
@@ -16,7 +20,7 @@ HEADER_TEMPLATE = """
 <script>
 MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    inlineMath: [['\\\\(', '\\\\)']]
   },
   svg: {
     fontCache: 'global',
