@@ -1,4 +1,4 @@
-[title]: <> (LatestVB Blog)
+[title]: <> (Obfuscation (Part II): Diamond iO)
 [date]: <> (2026/08/13)
 [category]: <> (general)
 [pandoc]: <> (--mathjax)
@@ -63,8 +63,6 @@ body .post-list > li { margin-bottom: 30px; }
   body .toc-category { display: inline-block; width: 200px; padding: 20px 12px; }
 }
 </style>
-
-# Obfuscation (Part II): Diamond iO
 
 _Special thanks to Sora Suegami and_ _Janmajaya Mall for feedback and review._
 
