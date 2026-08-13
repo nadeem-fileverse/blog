@@ -113,8 +113,8 @@ img,svg{max-width:100%;height:auto;}
 
 /* ---------- ddocs component structures (TEC-2634) ----------
    These match what the ddocs styles-mode markdown export emits:
-   aside.callout, figure[data-type="resizable-media"] (+ data-align /
-   data-float / figcaption), div[data-type="columns"]. */
+   aside.callout, div.tweet-embed, figure[data-type="resizable-media"]
+   (+ data-align / data-float / figcaption), div[data-type="columns"]. */
 
 /* Callout */
 .markdown-body .callout{
@@ -127,6 +127,33 @@ img,svg{max-width:100%;height:auto;}
 }
 .markdown-body .callout > p:first-child{margin-top:0;}
 .markdown-body .callout > p:last-child{margin-bottom:0;}
+
+/* Tweet link card (static — no widget script) */
+.markdown-body .tweet-embed{
+  background:var(--color-callout-bg);
+  border:1px solid var(--color-callout-border);
+  border-radius:12px;
+  padding:1em 1.4em;
+  margin:1.4em auto;
+  max-width:32em;
+  text-align:center;
+}
+.markdown-body .tweet-embed p{margin:0;}
+.markdown-body .tweet-embed a{
+  display:block;
+  font-weight:600;
+  color:var(--color-anchor);
+  text-decoration:none;
+}
+.markdown-body .tweet-embed a:hover{text-decoration:underline;}
+.markdown-body .tweet-embed .tweet-embed-url{
+  display:block;
+  margin-top:.3em;
+  font-size:.75em;
+  color:var(--color-text);
+  opacity:.6;
+  word-break:break-all;
+}
 
 /* Media figures: alignment + captions */
 .markdown-body figure[data-type="resizable-media"]{
