@@ -63,7 +63,7 @@ From cantor - compare against [https://vitalik.eth.limo/general/2019/04/01/canto
 
 From cbc\_casper - compare against [https://vitalik.eth.limo/general/2018/12/05/cbc\_casper.html](https://vitalik.eth.limo/general/2018/12/05/cbc_casper.html)
 
-*A minimal viable attack. <span data-type="inlineMath" data-latex="A" data-display="no" data-evaluate="no">$A$</span> and <span data-type="inlineMath" data-latex="C" data-display="no" data-evaluate="no">$C$</span> illegally switch over to support <span data-type="inlineMath" data-latex="B" data-display="no" data-evaluate="no">$B$</span>'s block (and can get penalized for this), giving it a 3-2 advantage, and at this point it becomes legal for <span data-type="inlineMath" data-latex="D" data-display="no" data-evaluate="no">$D$</span> and <span data-type="inlineMath" data-latex="E" data-display="no" data-evaluate="no">$E$</span> to also switch over.*
+*A minimal viable attack.* <span data-type="inlineMath" data-latex="A" data-display="no" data-evaluate="no">$A$</span> *and* <span data-type="inlineMath" data-latex="C" data-display="no" data-evaluate="no">$C$</span> *illegally switch over to support* <span data-type="inlineMath" data-latex="B" data-display="no" data-evaluate="no">$B$</span>*'s block (and can get penalized for this), giving it a 3-2 advantage, and at this point it becomes legal for* <span data-type="inlineMath" data-latex="D" data-display="no" data-evaluate="no">$D$</span> *and* <span data-type="inlineMath" data-latex="E" data-display="no" data-evaluate="no">$E$</span> *to also switch over.*
 
 From christmas - compare against [https://vitalik.eth.limo/general/2019/12/24/christmas.html](https://vitalik.eth.limo/general/2019/12/24/christmas.html)
 
@@ -71,7 +71,7 @@ Mathametically, this can be represented as, a hand is stronger if the player can
 
 From circlestarks - compare against [https://vitalik.eth.limo/general/2024/07/23/circlestarks.html](https://vitalik.eth.limo/general/2024/07/23/circlestarks.html)
 
-\* Suppose you have evaluations of a polynomial <span data-type="inlineMath" data-latex="A" data-display="no" data-evaluate="no">$A$</span>, and you want to prove that its degree is <span data-type="inlineMath" data-latex="&lt; 2^{20}" data-display="no" data-evaluate="no">$&lt; 2^{20}$</span>
+\* Suppose you have evaluations of a polynomial <span data-type="inlineMath" data-latex="A" data-display="no" data-evaluate="no">$A$</span>, and you want to prove that its degree is <span data-type="inlineMath" data-latex="&lt; 2^{20}" data-display="no" data-evaluate="no">$\lt  2^{20}$</span>
 
 From communitynotes - compare against [https://vitalik.eth.limo/general/2023/08/16/communitynotes.html](https://vitalik.eth.limo/general/2023/08/16/communitynotes.html)
 
@@ -145,11 +145,11 @@ From homomorphic - compare against [https://vitalik.eth.limo/general/2020/07/20/
 
 <span data-type="inlineMath" data-latex="k_i * k_j * 2^d + 2e" data-display="no" data-evaluate="no">$k_i * k_j * 2^d + 2e$</span>
 
-For example, if <span data-type="inlineMath" data-latex="ct_1 = [1, 2]" data-display="no" data-evaluate="no">$ct_1 = [1, 2]$</span> and <span data-type="inlineMath" data-latex="ct_2 = [3, 4]" data-display="no" data-evaluate="no">$ct_2 = [3, 4]$</span>, then <span data-type="inlineMath" data-latex="ct_1 \otimes ct_2 = [3, 4, 6, 8]" data-display="no" data-evaluate="no">$ct_1 \otimes ct_2 = [3, 4, 6, 8]$</span>, and <span data-type="inlineMath" data-latex="enc(&lt;ct_1 \otimes ct_2, k \otimes k>) = enc(3k_1k_1 + 4k_1k_2 + 6k_2k_1 + 8k_2k_2)" data-display="no" data-evaluate="no">$enc(&lt;ct_1 \otimes ct_2, k \otimes k>) = enc(3k_1k_1 + 4k_1k_2 + 6k_2k_1 + 8k_2k_2)$</span> could be computed via:
+For example, if <span data-type="inlineMath" data-latex="ct_1 = [1, 2]" data-display="no" data-evaluate="no">$ct_1 = [1, 2]$</span> and <span data-type="inlineMath" data-latex="ct_2 = [3, 4]" data-display="no" data-evaluate="no">$ct_2 = [3, 4]$</span>, then <span data-type="inlineMath" data-latex="ct_1 \otimes ct_2 = [3, 4, 6, 8]" data-display="no" data-evaluate="no">$ct_1 \otimes ct_2 = [3, 4, 6, 8]$</span>, and <span data-type="inlineMath" data-latex="enc(&lt;ct_1 \otimes ct_2, k \otimes k>) = enc(3k_1k_1 + 4k_1k_2 + 6k_2k_1 + 8k_2k_2)" data-display="no" data-evaluate="no">$enc(\lt ct_1 \otimes ct_2, k \otimes k>) = enc(3k_1k_1 + 4k_1k_2 + 6k_2k_1 + 8k_2k_2)$</span> could be computed via:
 
 <span data-type="inlineMath" data-latex="(m_1 * m_2)" data-display="yes" data-evaluate="no">$$(m_1 * m_2)$$</span>
 
-<span data-type="inlineMath" data-latex="= &lt;c_1, k> * &lt;c_2, k>" data-display="yes" data-evaluate="no">$$= &lt;c_1, k> * &lt;c_2, k>$$</span>
+<span data-type="inlineMath" data-latex="= &lt;c_1, k> * &lt;c_2, k>" data-display="yes" data-evaluate="no">$$= \lt c_1, k> * \lt c_2, k>$$</span>
 
 <span data-type="inlineMath" data-latex="enc(m) = R * p + r * 2 + m" data-display="yes" data-evaluate="no">$$enc(m) = R * p + r * 2 + m$$</span>
 
@@ -161,7 +161,7 @@ For example, if <span data-type="inlineMath" data-latex="ct_1 = [1, 2]" data-dis
 
 <span data-type="inlineMath" data-latex="ct_2 = R_2 * p + r_2 * 2 + m_2" data-display="yes" data-evaluate="no">$$ct_2 = R_2 * p + r_2 * 2 + m_2$$</span>
 
-<span data-type="inlineMath" data-latex="&lt;c_1 \otimes c_2, k \otimes k>" data-display="yes" data-evaluate="no">$$&lt;c_1 \otimes c_2, k \otimes k>$$</span>
+<span data-type="inlineMath" data-latex="&lt;c_1 \otimes c_2, k \otimes k>" data-display="yes" data-evaluate="no">$$\lt c_1 \otimes c_2, k \otimes k>$$</span>
 
 <span data-type="inlineMath" data-latex="= 2(e_1m_2 + e_2m_1 + 2e_1e_2) + m_1m_2" data-display="yes" data-evaluate="no">$$= 2(e_1m_2 + e_2m_1 + 2e_1e_2) + m_1m_2$$</span>
 
