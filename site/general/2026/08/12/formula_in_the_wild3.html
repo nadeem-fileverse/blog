@@ -213,19 +213,21 @@ href="https://vitalik.eth.limo/general/2019/04/01/cantor.html">https://vitalik.e
 data-evaluate="no"><span class="math inline">\(2^D\)</span></span></p>
 <p>From cbc_casper - compare against <a
 href="https://vitalik.eth.limo/general/2018/12/05/cbc_casper.html">https://vitalik.eth.limo/general/2018/12/05/cbc_casper.html</a></p>
-<p><em>A minimal viable attack. <span data-type="inlineMath"
+<p><em>A minimal viable attack.</em> <span data-type="inlineMath"
 data-latex="A" data-display="no" data-evaluate="no"><span
-class="math inline">\(A\)</span></span> and <span data-type="inlineMath"
-data-latex="C" data-display="no" data-evaluate="no"><span
-class="math inline">\(C\)</span></span> illegally switch over to support
-<span data-type="inlineMath" data-latex="B" data-display="no"
-data-evaluate="no"><span class="math inline">\(B\)</span></span>'s block
-(and can get penalized for this), giving it a 3-2 advantage, and at this
-point it becomes legal for <span data-type="inlineMath" data-latex="D"
+class="math inline">\(A\)</span></span> <em>and</em> <span
+data-type="inlineMath" data-latex="C" data-display="no"
+data-evaluate="no"><span class="math inline">\(C\)</span></span>
+<em>illegally switch over to support</em> <span data-type="inlineMath"
+data-latex="B" data-display="no" data-evaluate="no"><span
+class="math inline">\(B\)</span></span><em>'s block (and can get
+penalized for this), giving it a 3-2 advantage, and at this point it
+becomes legal for</em> <span data-type="inlineMath" data-latex="D"
 data-display="no" data-evaluate="no"><span
-class="math inline">\(D\)</span></span> and <span data-type="inlineMath"
-data-latex="E" data-display="no" data-evaluate="no"><span
-class="math inline">\(E\)</span></span> to also switch over.</em></p>
+class="math inline">\(D\)</span></span> <em>and</em> <span
+data-type="inlineMath" data-latex="E" data-display="no"
+data-evaluate="no"><span class="math inline">\(E\)</span></span> <em>to
+also switch over.</em></p>
 <p>From christmas - compare against <a
 href="https://vitalik.eth.limo/general/2019/12/24/christmas.html">https://vitalik.eth.limo/general/2019/12/24/christmas.html</a></p>
 <p>Mathametically, this can be represented as, a hand is stronger if the
@@ -249,7 +251,7 @@ data-type="inlineMath" data-latex="A" data-display="no"
 data-evaluate="no"><span class="math inline">\(A\)</span></span>, and
 you want to prove that its degree is <span data-type="inlineMath"
 data-latex="&lt; 2^{20}" data-display="no" data-evaluate="no"><span
-class="math inline">\(&amp;lt; 2^{20}\)</span></span></p>
+class="math inline">\(\lt 2^{20}\)</span></span></p>
 <p>From communitynotes - compare against <a
 href="https://vitalik.eth.limo/general/2023/08/16/communitynotes.html">https://vitalik.eth.limo/general/2023/08/16/communitynotes.html</a></p>
 <p><span data-type="inlineMath" data-latex="k * (k-1) * M"
@@ -424,17 +426,16 @@ data-latex="ct_1 \otimes ct_2 = [3, 4, 6, 8]" data-display="no"
 data-evaluate="no"><span class="math inline">\(ct_1 \otimes ct_2 = [3,
 4, 6, 8]\)</span></span>, and <span data-type="inlineMath"
 data-latex="enc(&lt;ct_1 \otimes ct_2, k \otimes k&gt;) = enc(3k_1k_1 + 4k_1k_2 + 6k_2k_1 + 8k_2k_2)"
-data-display="no" data-evaluate="no"><span
-class="math inline">\(enc(&amp;lt;ct_1 \otimes ct_2, k \otimes k&gt;) =
-enc(3k_1k_1 + 4k_1k_2 + 6k_2k_1 + 8k_2k_2)\)</span></span> could be
-computed via:</p>
+data-display="no" data-evaluate="no"><span class="math inline">\(enc(\lt
+ct_1 \otimes ct_2, k \otimes k&gt;) = enc(3k_1k_1 + 4k_1k_2 + 6k_2k_1 +
+8k_2k_2)\)</span></span> could be computed via:</p>
 <p><span data-type="inlineMath" data-latex="(m_1 * m_2)"
 data-display="yes" data-evaluate="no"><span class="math display">\[(m_1
 * m_2)\]</span></span></p>
 <p><span data-type="inlineMath"
 data-latex="= &lt;c_1, k&gt; * &lt;c_2, k&gt;" data-display="yes"
-data-evaluate="no"><span class="math display">\[= &amp;lt;c_1, k&gt; *
-&amp;lt;c_2, k&gt;\]</span></span></p>
+data-evaluate="no"><span class="math display">\[= \lt c_1, k&gt; * \lt
+c_2, k&gt;\]</span></span></p>
 <p><span data-type="inlineMath" data-latex="enc(m) = R * p + r * 2 + m"
 data-display="yes" data-evaluate="no"><span
 class="math display">\[enc(m) = R * p + r * 2 + m\]</span></span></p>
@@ -456,8 +457,8 @@ data-evaluate="no"><span class="math display">\[ct_2 = R_2 * p + r_2 * 2
 + m_2\]</span></span></p>
 <p><span data-type="inlineMath"
 data-latex="&lt;c_1 \otimes c_2, k \otimes k&gt;" data-display="yes"
-data-evaluate="no"><span class="math display">\[&amp;lt;c_1 \otimes c_2,
-k \otimes k&gt;\]</span></span></p>
+data-evaluate="no"><span class="math display">\[\lt c_1 \otimes c_2, k
+\otimes k&gt;\]</span></span></p>
 <p><span data-type="inlineMath"
 data-latex="= 2(e_1m_2 + e_2m_1 + 2e_1e_2) + m_1m_2" data-display="yes"
 data-evaluate="no"><span class="math display">\[= 2(e_1m_2 + e_2m_1 +
