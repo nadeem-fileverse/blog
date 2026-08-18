@@ -57,6 +57,6 @@
 </figure>
 
 <figure data-type="resizable-media" data-align="center">
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" data-background-color="#E5E5E5" style="background-color: #E5E5E5">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" data-background-color="#E5E5E5" style="background-color: #E5E5E5">
 <title>Socialmedia Icon-01</title><path d="M191.69,21V44.82H157.93V68.65H124.18V92.48H90.43V116.3H56.68v33.75H22.92V379H208.31V345.25h33.76V321.42h33.75V297.6h33.75V273.77h33.75V250h33.76V21ZM366.53,239.4H343.32V44.82H202.23V31.55h164.3ZM332.78,250v13.27H309.57V68.65H168.48V55.37h164.3V250ZM299,273.77v13.28h-23.2V92.48H134.73V79.2H299V273.77ZM265.27,297.6v13.27h-23.2V116.3H101V103H265.27V297.6Zm-33.75,23.82V334.7H208.31V150.05H67.22v-23.2h164.3V321.42Zm-33.75,23.83v23.2H33.47V160.6h164.3V345.25Z"/><circle cx="80.19" cy="228.48" r="11.54"/><circle cx="131.56" cy="228.48" r="11.54"/><path d="M151.2,263.67a38,38,0,0,1-75.77,0Z"/></svg>
 </figure>
