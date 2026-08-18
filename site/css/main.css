@@ -155,6 +155,11 @@ img,svg{max-width:100%;height:auto;}
   word-break:break-all;
 }
 
+/* Image backdrop: the inline background-color style carries the color;
+   round the corners to match the editor's rounded backdrop. */
+.markdown-body img[data-background-color],
+.markdown-body svg[data-background-color]{border-radius:8px;}
+
 /* Media figures: alignment + captions */
 .markdown-body figure[data-type="resizable-media"]{
   margin:1.5em 0;
