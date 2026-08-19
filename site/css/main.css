@@ -155,36 +155,23 @@ img,svg{max-width:100%;height:auto;}
   word-break:break-all;
 }
 
-/* Image backdrop: the inline background-color style carries the color;
-   round the corners to match the editor's rounded backdrop. */
-.markdown-body img[data-background-color],
-.markdown-body svg[data-background-color]{border-radius:8px;}
-
 /* Media figures: alignment + captions */
 .markdown-body figure[data-type="resizable-media"]{
   margin:1.5em 0;
 }
 .markdown-body figure[data-type="resizable-media"] img,
-.markdown-body figure[data-type="resizable-media"] video,
-.markdown-body figure[data-type="resizable-media"] svg{
+.markdown-body figure[data-type="resizable-media"] video{
   display:block;
   max-width:100%;
   height:auto;
 }
-/* The editor exports data-align="start|center|end"; keep left/right for
-   older posts. */
 .markdown-body figure[data-align="center"] img,
-.markdown-body figure[data-align="center"] video,
-.markdown-body figure[data-align="center"] svg{
+.markdown-body figure[data-align="center"] video{
   margin-left:auto;
   margin-right:auto;
 }
 .markdown-body figure[data-align="right"] img,
-.markdown-body figure[data-align="right"] video,
-.markdown-body figure[data-align="right"] svg,
-.markdown-body figure[data-align="end"] img,
-.markdown-body figure[data-align="end"] video,
-.markdown-body figure[data-align="end"] svg{
+.markdown-body figure[data-align="right"] video{
   margin-left:auto;
 }
 .markdown-body figure[data-type="resizable-media"] figcaption{
@@ -194,10 +181,8 @@ img,svg{max-width:100%;height:auto;}
   text-align:center;
   margin-top:.5em;
 }
-.markdown-body figure[data-align="left"] figcaption,
-.markdown-body figure[data-align="start"] figcaption{text-align:left;}
-.markdown-body figure[data-align="right"] figcaption,
-.markdown-body figure[data-align="end"] figcaption{text-align:right;}
+.markdown-body figure[data-align="left"] figcaption{text-align:left;}
+.markdown-body figure[data-align="right"] figcaption{text-align:right;}
 .markdown-body figure[data-float="left"]{
   float:left;
   max-width:50%;
